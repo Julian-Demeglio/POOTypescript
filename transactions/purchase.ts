@@ -8,13 +8,13 @@ export class Purchase {
     private _singlePurchases: ProductAmount[];
     private _supplier: Supplier;
     private _paymentMethod: PaymentMethod <AllPaymentsMethods>;
-    private _date: Date;
+    private _date: String;
 
     constructor(
         singlePurchases: ProductAmount[],
         supplier: Supplier,
         paymentMethod: PaymentMethod <AllPaymentsMethods>,
-        date: Date,
+        date: String,
     ){
         this._singlePurchases = singlePurchases;
         this._supplier = supplier
@@ -46,7 +46,7 @@ export class Purchase {
     public get date() {
         return this._date;
     }
-    public set date(date: Date) {
+    public set date(date: String) {
         this._date = date;
     }
 

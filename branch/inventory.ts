@@ -16,7 +16,6 @@ export class Inventory{
 
     public addProduct(prod:ProductAmount){
        const foundItem = this._stock.find((item)=>item.id === prod.id)
-    //    console.log(foundItem);
        if (foundItem) {
         foundItem.amount = foundItem.amount + prod.amount;
        } else {
@@ -29,7 +28,14 @@ export class Inventory{
             prod.price,
             prod.notes,
             prod.amount)
-        this.stock.push(newItem);
+        this._stock.push(newItem);
+        }
+    }
+
+    public removeProduct(prod: ProductAmount){
+        const foundItem = this._stock.find((item)=>item.id === prod.id)
+        if (foundItem) {
+            foundItem.amount = foundItem.amount - prod.amount;
         }
     }
 }

@@ -23,9 +23,4 @@ export class ProductAmount extends Product {
     public set amount(amount: number) {
         this._amount = amount;
     }
-
-    public addProductSale() {
-        this._amount = this._amount + 1;
-        return this._amount;
-    }
 }

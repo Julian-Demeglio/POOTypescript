@@ -13,7 +13,6 @@ class branch {
     private _address: string;
     private _owner: Person;
     private _employee: Employee[];
-    private _branchProducts: Product[];
     private _stock: Inventory;
     private _city: City;
     private _suppliers: Supplier[];
@@ -24,7 +23,6 @@ class branch {
         address: string,
         owner: Person,
         employee: Employee[],
-        branchProducts: Product[],
         stock: Inventory,
         city: City,
         suppliers: Supplier[],
@@ -34,7 +32,6 @@ class branch {
         this._address = address,
         this._owner = owner,
         this._employee = employee,
-        this._branchProducts = branchProducts,
         this._stock = stock;
         this._city = city;
         this._suppliers = suppliers;
@@ -63,17 +60,10 @@ class branch {
         this._employee = employee;
     }
 
-    public get branchProducts() {
-        return this._branchProducts;
-    }
-    public set branchProducts(branchProducts: Product[]) {
-        this._branchProducts = branchProducts;
-    }
-
     public get stock() {
         return this._stock;
     }
-    public set stock(stock: ProductAmount[]) {
+    public set stock(stock: Inventory) {
         this._stock = stock;
     }
 
@@ -103,9 +93,5 @@ class branch {
     }
     public set sale(sale: Sale[]) {
         this._sale = sale;
-    }
-
-    public sell(){
-        
     }
 }
